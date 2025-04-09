@@ -47,3 +47,5 @@ def isLongPressed(original,typed):
 
 if isLongPressed("alex", "aaleex")== True and isLongPressed("saeed", "ssaaedd")== False and isLongPressed("leelee", "lleeelee") == True and isLongPressed("Tokyo", "TTokkyoh") == False and isLongPressed("laiden", "laiden") == True:
     print("ALL TESTS PASSED :D")
+else:
+    print("I've fucked up, but where? *vsause music starts playing*")
