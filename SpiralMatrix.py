@@ -1,4 +1,4 @@
-import time
+import time # used only for measuring the solution
 
 def next_id(direction,Mx,cursor):
     direction_change = [(0,1),(1,0),(0,-1),(-1,0)]  # right, down, left, up
