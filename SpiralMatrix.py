@@ -105,3 +105,27 @@ output = []
 print(" - test #7 Passed" if testout == output else f"test #7 Failed, Result: "+str(testout))
 print(f" - - Time taken: {time.time() - start_time} seconds \n")
 print("#=======================================================#")
+
+# #=======================================================#
+#  - test #1 Passed
+#  - - Time taken: 2.574920654296875e-05 seconds 
+
+#  - test #2 Passed
+#  - - Time taken: 1.5020370483398438e-05 seconds 
+
+#  - test #3 Passed
+#  - - Time taken: 0.0005519390106201172 seconds 
+
+#  - test #4 Passed
+#  - - Time taken: 5.245208740234375e-06 seconds 
+
+#  - test #5 Passed
+#  - - Time taken: 5.9604644775390625e-06 seconds 
+
+#  - test #6 Passed
+#  - - Time taken: 3.0994415283203125e-06 seconds 
+
+#  - test #7 Passed
+#  - - Time taken: 2.86102294921875e-06 seconds 
+
+# #=======================================================#
