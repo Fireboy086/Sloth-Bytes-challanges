@@ -103,7 +103,7 @@ start_time = time.time()
 testout = spiralOrder([])
 output = []
 print(" - test #7 Passed" if testout == output else f"test #7 Failed, Result: "+str(testout))
-print(f" - - Time taken: {time.time() - start_time} seconds \n")
+print(f" - - Time taken: {time.time() - start_time} seconds ")
 print("#=======================================================#")
 
 # #=======================================================#
@@ -127,5 +127,4 @@ print("#=======================================================#")
 
 #  - test #7 Passed
 #  - - Time taken: 2.86102294921875e-06 seconds 
-
 # #=======================================================#
