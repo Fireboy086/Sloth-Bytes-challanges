@@ -35,6 +35,7 @@ def subtract_lists(list1,list2):
     return out_list
 
 def isLongPressed(original,typed):
+    """Check if typed string could be result of long pressing keys while typing original"""
     original_list = transform_to_dict(original)
     typed_list = transform_to_dict(typed)
 
@@ -45,7 +46,12 @@ def isLongPressed(original,typed):
     else: 
         return False
 
-if isLongPressed("alex", "aaleex")== True and isLongPressed("saeed", "ssaaedd")== False and isLongPressed("leelee", "lleeelee") == True and isLongPressed("Tokyo", "TTokkyoh") == False and isLongPressed("laiden", "laiden") == True:
-    print("ALL TESTS PASSED :D")
-else:
-    print("I've fucked up, but where? *vsause music starts playing*")
+if __name__ == "__main__":
+    import tester
+    from Cases import STICKY_KEYS_TEST_CASES
+    
+    tester.run_tests(
+        cases=STICKY_KEYS_TEST_CASES,
+        test_function=lambda original, typed: isLongPressed(original, typed),
+        function_name="isLongPressed"
+    )

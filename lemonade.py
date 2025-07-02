@@ -1,27 +1,38 @@
 def lemonade(bills):
-    saved_money = []
+    """
+    Check if we can provide change for all customers buying lemonade.
+    Lemonade costs $5. Customers pay with $5, $10, or $20 bills.
+    We start with no money and must provide exact change.
+    """
+    fives = 0
+    tens = 0
+    
     for bill in bills:
         if bill == 5:
-            saved_money.append(bill)
-            print(f"### added 5$ bill to saved_money, {saved_money}")
+            fives += 1
         elif bill == 10:
-            if 5 in saved_money:
-                saved_money.remove(5)
-                saved_money.append(10)
-                print(f"### removed 5$ bill to saved_money, {saved_money}")
+            if fives >= 2:
+                fives -= 1
+                tens += 1
             else:
                 return False
         elif bill == 20:
-            if 5 in saved_money and 10 in saved_money:
-                saved_money.remove(10)
-                saved_money.remove(5)
-                saved_money.append(20)
-                print(f"### added 10$ and 5$ bill to saved_money, {saved_money}")
-            elif saved_money.count(5)>=3:
-                for _ in range(3):
-                    saved_money.remove(5)
-                    print(f"### removed 3 5$ bills from saved money, {saved_money}")
-                    saved_money.append(20)
+            # Prefer giving one $10 and one $5 rather than three $5s
+            if tens >= 1 and fives >= 1:
+                tens -= 1
+                fives -= 1
+            elif fives >= 3:
+                fives -= 3
             else:
                 return False
     return True
+
+if __name__ == "__main__":
+    import tester
+    from Cases import LEMONADE_TEST_CASES
+    
+    tester.run_tests(
+        cases=LEMONADE_TEST_CASES,
+        test_function=lemonade,
+        function_name="lemonade"
+    )

@@ -12,6 +12,10 @@ def unfold_brackets(string):
     return outstr
 
 def spaceMessage(init):
+    """
+    Decode a space message by expanding bracketed expressions.
+    Format: [NumberLetters] expands to Letters repeated Number times.
+    """
     # Lists to store temporary chars and final result
     temp_brackets = []
     out_no_brackets = []
@@ -32,12 +36,15 @@ def spaceMessage(init):
                 temp_brackets.append(s)
     return "".join(out_no_brackets)
 
-print(spaceMessage("[1000WOW]"))
-print(spaceMessage("IF[2E]LG[5O]D"))
-print(spaceMessage("AB[3CD]"))
-print(spaceMessage("ABCD"))
-print(spaceMessage(""))
-
+if __name__ == "__main__":
+    import tester
+    from Cases import SPACE_MESSAGE_TEST_CASES
+    
+    tester.run_tests(
+        cases=SPACE_MESSAGE_TEST_CASES,
+        test_function=spaceMessage,
+        function_name="spaceMessage"
+    )
 
 
 #           _______  _______  _        _______      _______  _        _______           _        _______  _______  _______  _
