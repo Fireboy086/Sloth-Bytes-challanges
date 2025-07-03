@@ -7,10 +7,9 @@ def digits(n: int):
         return n-1
     else:
         for i in range(numDigits,0,-1):
-            sub =(rest-10**(numDigits-1))
-            out += sub *numDigits
+            sub =(rest-10**(i-1))
+            out += sub * i
             rest -= sub
-            numDigits -= 1
     return out
 
 
@@ -21,7 +20,7 @@ if __name__ == "__main__":
     
     tester.run_tests(
         cases=NDIGITS_TEST_CASES,
-        numChecks=-1,
+        numChecks=3,
         test_function=digits,
         function_name="digits"
     )
