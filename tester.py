@@ -1,7 +1,7 @@
 import time
 from concurrent.futures import ThreadPoolExecutor, TimeoutError
 
-def run_tests(cases: list[tuple], timeout: float = 1.0, test_function=None, function_name: str = "Unknown") -> None:
+def run_tests(cases: list[tuple],numChecks: int = -1, timeout: float = 1.0, test_function=None, function_name: str = "Unknown") -> None:
     """
     Generic test runner for any function.
     Args:
@@ -22,8 +22,10 @@ def run_tests(cases: list[tuple], timeout: float = 1.0, test_function=None, func
     
     passed = 0
     failed = 0
+    if numChecks == -1:
+        numChecks = len(cases)
     
-    for caseIndex, case in enumerate(cases):
+    for caseIndex, case in enumerate(cases[:numChecks]):
         header = f" -----------====#### Case {caseIndex+1} ####====-----------" + (3-len(str(caseIndex+1)))*"-"+ " "
         print(f"{header:^148}")
         start_time = time.time()
@@ -55,6 +57,7 @@ def run_tests(cases: list[tuple], timeout: float = 1.0, test_function=None, func
                 passed += 1
             else:
                 print(f"{'❌ Failed: Incorrect result':^148}")
+                print(f"{'Input: ' + str(test_input):^148}")
                 print(f"{'Expected: ' + str(expected):^148}")
                 print(f"{'Got: ' + str(test_result):^148}")
                 failed += 1
