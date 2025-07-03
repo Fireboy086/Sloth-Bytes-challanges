@@ -1,10 +1,3 @@
-def digitsSimple(n: int):
-    """Count total number of digits used to write all numbers from 1 to n-1"""
-    out = 0
-    for i in range(1, n):
-        out += len(str(i))
-    return out
-
 def digits(n: int):
     """Count total number of digits used to write all numbers from 1 to n-1"""
     numDigits = len(str(n-1))
