@@ -17,10 +17,9 @@ def digits(n: int):
 if __name__ == "__main__":
     import tester
     from Cases import NDIGITS_TEST_CASES
-    
     tester.run_tests(
         cases=NDIGITS_TEST_CASES,
-        numChecks=3,
+        numChecks=-1,
         test_function=digits,
         function_name="digits"
     )
