@@ -8,7 +8,7 @@ def overlap(word1, word2):
     if word1 == word2:  # If both words are identical, return either word
         return word1
     elif word2[0] in word1:  # If first character of word2 is not in word1, concatenate words
-        start = word1.index(word2[0])
+        start = (len(word1)-1) - word1[::-1].index(word2[0])
         if word1[start:] == word2[:len(word1[start:])]:  # If end of word1 matches start of word2
             return word1[:start]+word2
     return word1 + word2
@@ -28,3 +28,5 @@ print("testing - ",overlap("dodge", "dodge"))
 print("testing - ",overlap("Maniquen", "English"))
 
 print("testing - ",overlap("somebody", "mebody"))
+
+print("testing - ",overlap("apple", "plea"))
