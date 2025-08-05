@@ -7,13 +7,11 @@ def overlap(word1, word2):
     
     if word1 == word2:  # If both words are identical, return either word
         return word1
-    elif word2[0] not in word1:  # If first character of word2 is not in word1, concatenate words
-        return word1 + word2
-    else:  # If first character of word2 is in word1, find potential overlap
+    elif word2[0] in word1:  # If first character of word2 is not in word1, concatenate words
         start = word1.index(word2[0])
         if word1[start:] == word2[:len(word1[start:])]:  # If end of word1 matches start of word2
             return word1[:start]+word2
-        return word1 + word2  # If no clean overlap, concatenate words
+    return word1 + word2
 
 
 # ============TESTS===========#
