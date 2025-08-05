@@ -30,3 +30,9 @@ print("testing - ",overlap("Maniquen", "English"))
 print("testing - ",overlap("somebody", "mebody"))
 
 print("testing - ",overlap("apple", "plea"))
+
+print("testing - ",overlap("prototype", "typewriter"))
+
+print("testing - ",overlap("department", "artistic"))
+
+print("testing - ",overlap("champion", "onion"))
