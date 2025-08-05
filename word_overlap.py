@@ -19,20 +19,20 @@ def overlap(word1, word2):
 # account for theese types of #
 #          tests D:           #
 
-print("testing - ",overlap("sweden", "denmark"))
+print(overlap("sweden", "denmark"))  # swedenmark
 
-print("testing - ",overlap("honey", "milk"))
+print(overlap("honey", "milk"))  # honeymilk
 
-print("testing - ",overlap("dodge", "dodge"))
+print(overlap("dodge", "dodge"))  # dodge
 
-print("testing - ",overlap("Maniquen", "English"))
+print(overlap("Maniquen", "English"))  # maniquenglish
 
-print("testing - ",overlap("somebody", "mebody"))
+print(overlap("somebody", "mebody"))  # somebody
 
-print("testing - ",overlap("apple", "plea"))
+print(overlap("apple", "plea"))  # applea
 
-print("testing - ",overlap("prototype", "typewriter"))
+print(overlap("prototype", "typewriter"))  # prototypewriter
 
-print("testing - ",overlap("department", "artistic"))
+print(overlap("department", "artistic"))  # departmentartistic
 
-print("testing - ",overlap("champion", "onion"))
+print(overlap("champion", "onion"))  # championion
